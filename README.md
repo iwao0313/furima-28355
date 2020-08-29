@@ -2,20 +2,22 @@
 
 ## users テーブル
 
-| Column       | Type   | Options     |
-| --------     | ------ | ----------- |
-| name         | string | null: false |
-| nickname     | string | null: false |
-| email        | string | null: false |
-| password     | string | null: false |
-| name_zenkaku | string | null: false |
-| name_katakana| string | null: false |
-| birthday     | date   | null: false |
+| Column              | Type   | Options     |
+| --------            | ------ | ----------- |
+| name                | string | null: false |
+| nickname            | string | null: false |
+| email               | string | null: false |
+| password            | string | null: false |
+| family_name_zenkaku | string | null: false |
+| first_name_zenkaku  | string | null: false |
+| family_name_katakana| string | null: false |
+| first_name_katakana | string | null: false |
+| birthday            | date   | null: false |
 
 ### Association
 
 - has_many :exhibions
-- has_one  :buys
+- has_many :buys
 
 ## exhibions テーブル
 
@@ -32,8 +34,8 @@
 
 ### Association
 
-- has_many :users
-- has_one  :buys
+- belong_to :users
+- has_one   :buy
 
 ## buys テーブル
 
@@ -41,17 +43,14 @@
 | ------          | ---------- | -----------|
 | product_image   | string     | null: false|
 | price           | string     | null: false|
-| card_infomation | integer    | null: false|
-| expiration_date | date       | null: false|
-| security_code   | integer    | null: false|
-| postal_code     | integer    | null: false|
+| postal_code     | string     | null: false|
 | prefecture      | string     | null: false|
 | city            | string     | null: false|
 | address         | string     | null: false|
 | building_name   | string     | null: false|
-| phone number    | integer    | null: false|
+| phone number    | string     | null: false|
+
 ### Association
 
-- has_many :users
-- has_one  :exhibions
+- belongs_to :exhibion
 
