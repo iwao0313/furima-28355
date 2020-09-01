@@ -25,6 +25,7 @@
 | ------             | ------ | ----------- |
 | product_name       | string | null: false |
 | explanation        | text   | null: false |
+| Product_detail     | string | null: false |
 | price              | string | null: false |
 
 ### Association
@@ -37,6 +38,7 @@
 | Column          | Type       | Options    |
 | ------          | ---------- | -----------|
 | postal_code     | string     | null: false|
+| prefecture      | string     | null: false|
 | city            | string     | null: false|
 | address         | string     | null: false|
 | building_name   | string     |            |
@@ -46,3 +48,9 @@
 
 - belongs_to :exhibion
 
+
+## transaction テーブル
+| Column          | Type       | Options    |
+| ------          | ---------- | -----------|
+| user            | reference  | null: false|
+| exhibition      | reference  | null: false|
