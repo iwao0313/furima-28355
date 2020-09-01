@@ -33,7 +33,7 @@
 - belong_to :user
 - has_one   :buy
 
-## buys テーブル
+## adress テーブル
 
 | Column          | Type       | Options    |
 | ------          | ---------- | -----------|
