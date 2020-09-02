@@ -15,21 +15,21 @@
 
 ### Association
 
-- has_many :exhibion
-- has_many :address
+- has_many :exhibitions
+- has_many :addresses
 
-## exhibions テーブル
+## exhibitions テーブル
 
-| Column             | Type   | Options     |
-| ------             | ------ | ----------- |
-| product_name       | string | null: false |
-| explanation        | text   | null: false |
-| price              | string | null: false |
-| category           | string | null: false |
-| status             | string | null: false |
-| shipping_fee_burden| string | null: false |
-| shipping_region    | string | null: false |
-| days               | date   | null: false |
+| Column                | Type   | Options     |
+| ------                | ------ | ----------- |
+| product_name          | string | null: false |
+| explanation           | text   | null: false |
+| price                 | integer| null: false |
+| category_id           | integer| null: false |
+| status_id             | integer| null: false |
+| shipping_fee_burden_id| integer| null: false |
+| shipping_region_id    | integer| null: false |
+| days_id               | integer| null: false |
 
 ### Association
 
@@ -41,7 +41,7 @@
 | Column          | Type       | Options    |
 | ------          | ---------- | -----------|
 | postal_code     | string     | null: false|
-| prefecture      | integer    | null: false|
+| prefecture_id   | integer    | null: false|
 | city            | string     | null: false|
 | address         | string     | null: false|
 | building_name   | string     |            |
@@ -49,8 +49,6 @@
 
 ### Association
 
-- belongs_to :exhibions
-  belongs_to :address
   belongs_to_:transaction
 
 
@@ -63,3 +61,4 @@
 ### Association
 
   belongs_to :user
+  belongs_to :exhibition
