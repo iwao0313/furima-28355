@@ -27,13 +27,18 @@
 | explanation        | text   | null: false |
 | Product_detail     | string | null: false |
 | price              | string | null: false |
+| category           | string | null: false |
+| status             | string | null: false |
+| shipping_fee_burden| string | null: false |
+| shipping_region    | string | null: false |
+| days               | date   | null: false |
 
 ### Association
 
 - belong_to :user
 - has_one   :buy
 
-## adress テーブル
+## address テーブル
 
 | Column          | Type       | Options    |
 | ------          | ---------- | -----------|
@@ -47,6 +52,8 @@
 ### Association
 
 - belongs_to :exhibion
+  belongs_to :address
+  belongs_to_:transaction
 
 
 ## transaction テーブル
