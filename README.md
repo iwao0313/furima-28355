@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :exhibitions
-- has_many :transaction
+- has_many :transactions
 
 ## exhibitions テーブル
 
