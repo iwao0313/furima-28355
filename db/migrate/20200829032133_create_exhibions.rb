@@ -7,6 +7,7 @@ class CreateExhibions < ActiveRecord::Migration[6.0]
       t.integer    :prefecture _id         , null: false
       t.string     :shipping_fee_burden_id , null: false
       t.string     :status_id              , null: false
+      t.integer    :transaction_id         , null: false
       t.timestamps
     end
   end
