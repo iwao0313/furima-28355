@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :exhibitions
-- has_many :addresses
+- has_many :transaction
 
 ## exhibitions テーブル
 
@@ -30,11 +30,12 @@
 | shipping_fee_burden_id| integer| null: false |
 | shipping_region_id    | integer| null: false |
 | days_id               | integer| null: false |
+| user_id               | integer| null: false |
 
 ### Association
 
 - belong_to :user
-- has_one   :address
+- has_one   :transaction
 
 ## address テーブル
 
@@ -55,10 +56,10 @@
 
 
 ## transaction テーブル
-| Column          | Type       | Options    |
-| ------          | ---------- | -----------|
-| user            | reference  | null: false|
-| exhibition      | reference  | null: false|
+| Column          | Type       | Options                      |
+| ------          | ---------- | -----------                  |
+| user            | reference  | null: false,foreign_key: true|
+| exhibition      | reference  | null: false,foreign_key: true|
 
 ### Association
 

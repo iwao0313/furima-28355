@@ -8,6 +8,7 @@ class CreateExhibions < ActiveRecord::Migration[6.0]
       t.string     :shipping_fee_burden_id , null: false
       t.string     :status_id              , null: false
       t.integer    :transaction_id         , null: false
+      t.integer    :user_id                , null: false
       t.timestamps
     end
   end
