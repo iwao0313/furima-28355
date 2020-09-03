@@ -30,7 +30,7 @@
 | shipping_fee_burden_id| integer| null: false |
 | shipping_region_id    | integer| null: false |
 | days_id               | integer| null: false |
-| user_id               | integer| null: false |
+| user_id               | integer| null: false,foreign_key: true |
 
 ### Association
 
@@ -65,4 +65,4 @@
 
   belongs_to :user
   belongs_to :exhibition
-  belongs_to :address
+  has_one :address
