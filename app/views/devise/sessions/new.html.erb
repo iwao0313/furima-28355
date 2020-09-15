@@ -1,23 +1,6 @@
+<%= render "shared/second-header"%>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Furima</title>
-  <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="EthM5w+KLkxlyEcRMb0RySUMlFXlziPOJ8XcOW1ib+w3RrqKCyMJfa7vbXDWpZr/LKB7FztSdmQlIB+lHKE0gw==" />
-  
-  <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
-  <link rel="stylesheet" media="all" href="/assets/application-8b37e51bafa9be221e69c212403c04404d0bb4135b5867f05c728af24c3a1763.css" />
-  <script src="/packs/js/application-708efcef47ddbdedb7b4.js"></script>
-</head>
-
-<body>
-  <header class='second-header'>
-  <a href="/"><img class="second-logo" src="/assets/logo-9486ef715c62ec78e487e9fd713395dee60de0966916f621cbc19d0462dbf03b.png" /></a>
-</header>
-
-<form class="registration-main" action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Wa1eCCLdwO6vXLhn+eTVMOqVK0Umsou0+PNDVjgODdClbpmx5tphU911qsBzvyCOSiVs+qZDeoz1AoMwsdP0sg==" />
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -25,36 +8,27 @@
     </h1>
   </div>
   <div class='login-flash-message'>
-    
-    
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
-    <input class="input-default" id="email" placeholder="PC・携帯どちらでも可" autofocus="autofocus" type="email" value="" name="user[email]" />
+    <%= f.email_firld :email, class:"input-default", id:"email", placeholder:"PC·携帯どちらでも可", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">パスワード</label>
       <span class="indispensable">必須</span>
     </div>
-    <input class="input-default" id="password" placeholder="" type="password" name="user[password]" />
+    <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
   </div>
   <div class='login-btn'>
-    <input type="submit" name="commit" value="ログイン" class="login-red-btn" data-disable-with="ログイン" />
+    <%= f.submit "ログイン" ,class:"login-red-btn"%>
   </div>
 </div>
-</form>
-<footer class='second-fotter'>
-  <div class='second-fotter-text-wrap'>
-    <p class='second-fotter-text'>プライバシーポリシー</p>
-    <p class='second-fotter-text'>FURIMA利用規約</p>
-    <p class='second-fotter-text'>特定商取引に関する表記</p>
-  </div>
-  <img class="second-fotter-logo" src="/assets/logo-9486ef715c62ec78e487e9fd713395dee60de0966916f621cbc19d0462dbf03b.png" />
-</footer>
-</body>
+<% end %>
 
-</html>
+<%= render "shared/second-footer"%>
