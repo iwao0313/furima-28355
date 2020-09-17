@@ -16,7 +16,11 @@
 ### Association
 
 - has_many :items
+<<<<<<< Updated upstream
 - has_many :purchase
+=======
+- has_many :purchases
+>>>>>>> Stashed changes
 
 ## items テーブル
 
@@ -55,7 +59,11 @@
   belongs_to_:purchase
 
 
+<<<<<<< Updated upstream
 ## purchase テーブル
+=======
+## purchases テーブル
+>>>>>>> Stashed changes
 | Column          | Type       | Options                      |
 | ------          | ---------- | -----------                  |
 | user            | reference  | null: false,foreign_key: true|
