@@ -22,13 +22,13 @@
 
 | Column                | Type   | Options     |
 | ------                | ------ | ----------- |
-| product_name          | string | null: false |
-| explanation           | text   | null: false |
+| name                  | string | null: false |
+| explain               | text   | null: false |
 | price                 | integer| null: false |
-| category_id           | integer| null: false |
-| status_id             | integer| null: false |
-| shipping_fee_burden_id| integer| null: false |
-| shipping_region_id    | integer| null: false |
+| cate_id               | integer| null: false |
+| state_id              | integer| null: false |
+| burden_id             | integer| null: false |
+| ship_from_id          | integer| null: false |
 | days_id               | integer| null: false |
 | user_id               | integer| null: false,foreign_key: true |
 
@@ -41,13 +41,13 @@
 
 | Column            | Type       | Options                      |
 | ------            | ---------- | -----------                  |
-| postal_code       | string     | null: false                  |
-| prefecture_id     | integer    | null: false                  |
-| city              | string     | null: false                  |
-| address           | string     | null: false                  |
+| zip_code          | string     | null: false                  |
+| province_id       | integer    | null: false                  |
+| municipalities    | string     | null: false                  |
+| street_number     | string     | null: false                  |
 | building_name     | string     |                              |
-| phone_number      | string     | null: false                  |
-| item_purchase_id  | integer    | null: false,foreign_key: true|
+| telephone_number  | string     | null: false                  |
+| purchase_id       | integer    | null: false,foreign_key: true|
 
 
 ### Association
@@ -59,7 +59,7 @@
 | Column          | Type       | Options                      |
 | ------          | ---------- | -----------                  |
 | user            | reference  | null: false,foreign_key: true|
-| exhibition      | reference  | null: false,foreign_key: true|
+| item            | reference  | null: false,foreign_key: true|
 
 ### Association
 
