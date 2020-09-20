@@ -1,0 +1,2 @@
+class Exhibion < ApplicationRecord
+end

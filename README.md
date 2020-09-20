@@ -15,6 +15,7 @@
 
 ### Association
 
+
 - has_many :items
 - has_many :purchase
 
@@ -37,6 +38,8 @@
 - belong_to :user
 - has_one   :purchase
 
+
+
 ## address テーブル
 
 | Column            | Type       | Options                      |
@@ -50,7 +53,9 @@
 | purchase_id       | integer    | null: false,foreign_key: true|
 
 
+
 ### Association
+
 
   belongs_to_:purchase
 
