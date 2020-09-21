@@ -8,7 +8,7 @@ FactoryBot.define do
     burden_id        {"2"}
     ship_form_id     {"2"}
     shipping_days_id {"2"}
-    user
+    association :user
 
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
