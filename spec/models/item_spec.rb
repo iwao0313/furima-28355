@@ -59,7 +59,7 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  context '商品出品がうまく行く時'
+  context '全ての値が正常であれば登録できる'
     it "nameがあれば登録できる" do
       @item.name = "あ"
       expect(@item).to be_valid
