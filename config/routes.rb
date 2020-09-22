@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "items#index"
   devise_for :users
-  resources :items, only: [:new, :create, :show, :edit, :update, :destroy] do
+  resources :items, except: [:index] do
     resources :purchases, only:[:index, :create]
   end
 end
