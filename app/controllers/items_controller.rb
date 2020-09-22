@@ -8,11 +8,13 @@ class ItemsController < ApplicationController
     # @purchase = PurchaseAddress.new
   end
 
-  # def new
-  #   @item = Item.new
-  # end
+
+  def new
+    @item = Item.new
+  end
 
   def create
+
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -28,6 +30,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -41,19 +44,23 @@ class ItemsController < ApplicationController
     else
       render :edit
    end
-   end
+  end
 
-    private
+    
+  private
 
   def item_params
     params.require(:item).permit(:name, :explain, :price, :image, :cate_id, :state_id, :burden_id, :ship_form_id, :shipping_days_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+     unless user_signed_in?
+      redirect_to action: :index
+     end
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
-  end
+
+end

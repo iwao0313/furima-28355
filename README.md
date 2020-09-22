@@ -24,13 +24,14 @@
 | Column                | Type   | Options     |
 | ------                | ------ | ----------- |
 | name                  | string | null: false |
+| images                | text   | null: false |
 | explain               | text   | null: false |
 | price                 | integer| null: false |
 | cate_id               | integer| null: false |
 | state_id              | integer| null: false |
 | burden_id             | integer| null: false |
-| ship_from_id          | integer| null: false |
-| days_id               | integer| null: false |
+| ship_form_id          | integer| null: false |
+| shipping_days_id      | integer| null: false |
 | user_id               | integer| null: false,foreign_key: true |
 
 ### Association
