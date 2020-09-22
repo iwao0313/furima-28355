@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order('created_at DESC')
-    # @purchase = PurchaseAddress.new
+    @purchase = PurchaseAddress.new
   end
 
 
