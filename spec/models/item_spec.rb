@@ -5,6 +5,15 @@ RSpec.describe Item, type: :model do
   end
  
   describe '商品出品' do
+    context '商品出品がうまくいくとき'
+      it "全ての値が正常であれば登録できる" do
+        expect(@item).to be_valid
+      end
+      it "imageを含んでいれば登録できる"
+        expect(@item).to be_valid
+      end
+    end
+
     context '商品出品がうまく行かない時'
       it "nameが空だと登録できない" do
         @item.name = ""
@@ -56,29 +65,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
-    end
-  end
-
-  context '全ての値が正常であれば登録できる'
-    it "nameがあれば登録できる" do
-      @item.name = "あ"
-      expect(@item).to be_valid
-    end
-    it "priceがあれば登録できる" do
-      @item.price = "1000"
-      expect(@item).to be_valid
-    end
-    it "explainがあれば登録できる" do
-      @item.explain = "ああ"
-      expect(@item).to be_valid
-    end
-    it "cate_idとstate_id,burden_idとship_form_id,shipping_days_idが1以外なら登録できる" do
-      @item.cate_id = "2"
-      expect(@item).to be_valid
-    end
-    it "priceが300以上9999999なら登録できる" do
-      @item.price = "1000"
-      expect(@item).to be_valid
     end
   end
 end
