@@ -1,4 +1,4 @@
-class PurchaseAddress < ApplicationRecord
+class PurchaseAddress
 
   include ActiveModel::Model
   attr_accessor :token, :zip_code, :province, :municipalities, :street_number, :building_number, :telephone_number, :user_id, :item_id
@@ -15,5 +15,5 @@ class PurchaseAddress < ApplicationRecord
     purchase = Purchase.create(user_id: user_id, item_id: item_id)
     Address.create(zip_code: zip_code, province: province, municipalities: municipalities, street_number: street_number, building_number: building_number, telephone_number: telephone_number, purchase_id: purchase.id)
   end
-  
-end
+
+end 
