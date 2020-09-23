@@ -9,7 +9,7 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    
+   
     @purchase = PurchaseAddress.new(order_params)
     if @purchase.valid?
       pay_item
@@ -47,7 +47,7 @@ class PurchasesController < ApplicationController
   end
 
   def order_params
-    params.require(:purchase_address).params.permit(:token, :zip_code, :province, :municipalities, :street_number, :building_number, :telephone_number).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:purchase_address).permit(:token, :zip_code, :province, :municipalities, :street_number, :building_number, :telephone_number).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def pay_item
