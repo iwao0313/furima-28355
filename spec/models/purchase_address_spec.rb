@@ -10,11 +10,6 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@purchase_address).to be_valid
       end
-
-      it 'building_numberは空でも保存できること' do
-        @purchase_address.building_number = nil
-        expect(@purchase_address).to be_valid
-      end
     end
 
     context '商品購入情報の保存がうまくいいかないとき' do
