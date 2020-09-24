@@ -6,7 +6,7 @@ $(function () {
 
     let itemPrice = Number(str);
     let addTaxPrice = Math.round(itemPrice * rate);
-    let profit = itemPrice - addTaxPrice;           
+    let profit = itemPrice - addTaxPrice;
     $('#add-tax-price').text(addTaxPrice);
     $('#profit').text(profit);
   });
