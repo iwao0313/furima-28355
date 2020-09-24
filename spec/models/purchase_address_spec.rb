@@ -25,6 +25,12 @@ RSpec.describe PurchaseAddress, type: :model do
         expect(@purchase_address.errors.full_messages).to include("Zip code is invalid. Include hyphen(-)")
       end
 
+      it "zip_codeが9文字だと登録できないこと" do
+        @purchase_address.postal = "123-45670"
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Postal is too long (maximum is 8 characters)", "Postal is invalid")
+      end
+
       it 'provinceが空では保存できないこと' do
         @purchase_address.province = nil
         @purchase_address.valid?
@@ -59,6 +65,12 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.telephone_number = "090111111111"
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Telephone number is invalid")
+      end
+
+      it "カードトークンが存在しない場合、購入ができない" do
+        @purchase_address.token = nil
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
