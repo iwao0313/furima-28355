@@ -73,6 +73,7 @@
   belongs_to :items
   has_one :address
 
+<!-- herokuにpayjpの環境変数を設定する。　 -->
+<!-- git add . → git commit -m 'test' → git push heroku master -->
 
-  
   
